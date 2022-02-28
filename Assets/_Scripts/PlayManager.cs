@@ -6,42 +6,40 @@ using UnityEngine.UI;
 public class PlayManager : MonoBehaviour
 {
     [Header("Elementos")]
-    public SnakeHead _snakeHead;
-    public Transform comida;
-    public GameObject poder;
+    [SerializeField] private SnakeHead _snakeHead;
+    [SerializeField] private Transform comida;
+    [SerializeField] private GameObject poder;
 
     [Header("Configuracion")]
-    public Vector2 limitesComidaSpaw = new Vector2(4, 4);
+    [SerializeField] private Vector2 limitesComidaSpaw = new Vector2(4, 4);
 
     [Header("UI")]
-    public Text txt_puntaje;
-    public int puntoComida = 8;
+    [SerializeField] private Text txt_puntaje;
+    [SerializeField] private int puntoComida = 8;
 
     private int puntuacion = 0000;
 
     [Header("Multiplos de PuntoComida")]
-    public Text txt_tiempoPoder;
-    public int puntosMultiplicacionPoder = 5;
-    public int cadaCuantoPoder = 6;
-    public int aumentoEsperaPoder = 1;
+    [SerializeField] private Text txt_tiempoPoder;
+    [SerializeField] private int puntosMultiplicacionPoder = 5;
+    [SerializeField] private int cadaCuantoPoder = 6;
+    [SerializeField] private int aumentoEsperaPoder = 1;
 
+    [Space]
     private int esperaPoder = 0;
-    public int tiempoPoder = 40;
+    [SerializeField] private int tiempoPoder = 40;
     private int tiempoPoderRestante = 0;
-
-    public Image img_poder;
-
+    [SerializeField] private Image img_poder;
     private bool hayPoder = false;
-
-    public Text txt_comboPoder;
+    [SerializeField] private Text txt_comboPoder;
     private int comboPoder = 0;
 
-    private Vector2 posValida = new Vector2(0, 0);
+    private Vector2 posValida = Vector2.zero;
     private List<int> posLibreX = new List<int>();
     private List<int> posLibreY = new List<int>();
     private List<Vector2> ColasPos = new List<Vector2>();
     private System.Random rand;
-    private Vector2 valores = new Vector2(0, 0);
+    private Vector2 valores = Vector2.zero;
     private float limX = 0;
     private float limY = 0;
     private float valX = 0;

@@ -17,16 +17,16 @@ QualitySettings:
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
-    shadowmaskMode: 1
+    shadowmaskMode: 0
     skinWeights: 1
     textureQuality: 0
-    anisotropicTextures: 0
+    anisotropicTextures: 1
     antiAliasing: 0
     softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
-    vSyncCount: 0
+    vSyncCount: 1
     lodBias: 1
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -44,9 +44,14 @@ QualitySettings:
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 0
+    CloudRendering: 0
+    GameCoreScarlett: 0
+    GameCoreXboxOne: 0
     Lumin: 0
     Nintendo Switch: 0
     PS4: 0
+    PS5: 0
+    Server: 0
     Stadia: 0
     Standalone: 0
     WebGL: 0

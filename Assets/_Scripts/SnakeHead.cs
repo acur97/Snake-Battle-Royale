@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SnakeHead : MonoBehaviour
 {
-    public float frameRate = 0.2f;
-    public float step = 0.16f;
+    [SerializeField] private float frameRate = 0.2f;
+    [SerializeField] private float step = 0.16f;
 
     [Space]
-    public Transform cabeza_root;
-    public Transform colas_root;
+    [SerializeField] private Transform cabeza_root;
+    [SerializeField] private Transform colas_root;
     [Space]
-    public GameObject prefabCola;
+    [SerializeField] private GameObject prefabCola;
 
     public enum Direccion
     {
@@ -31,16 +31,16 @@ public class SnakeHead : MonoBehaviour
     public delegate void Movimiento();
     public event Movimiento OnMovimiento;
 
-    private Vector3 nextPos = Vector3.zero;
-    private Vector3 lastPos = Vector3.zero;
-    private Vector3 temporalPos = Vector3.zero;
+    private Vector2 nextPos = Vector2.zero;
+    private Vector2 lastPos = Vector2.zero;
+    private Vector2 temporalPos = Vector2.zero;
 
-    private readonly Vector3 posZero = Vector3.zero;
-    private readonly Vector3 posUp = Vector3.up;
-    private readonly Vector3 posdown = Vector3.down;
-    private readonly Vector3 posleft = Vector3.left;
-    private readonly Vector3 posright = Vector3.right;
-    private readonly quaternion quaternionTdentity = quaternion.identity;
+    private readonly Vector2 posZero = Vector2.zero;
+    private readonly Vector2 posUp = Vector2.up;
+    private readonly Vector2 posdown = Vector2.down;
+    private readonly Vector2 posleft = Vector2.left;
+    private readonly Vector2 posright = Vector2.right;
+    private readonly quaternion quaternionIdentity = quaternion.identity;
 
     private const string Limite1 = "Limite (1)";
     private const string Limite2 = "Limite (2)";
@@ -100,7 +100,7 @@ public class SnakeHead : MonoBehaviour
         _tempDir = _dir;
 
         nextPos *= step;
-        cabeza_root.localPosition += nextPos;
+        cabeza_root.localPosition = new Vector2(cabeza_root.localPosition.x + nextPos.x, cabeza_root.localPosition.y + nextPos.y);
 
         MoverCola();
         OnMovimiento();
@@ -174,7 +174,7 @@ public class SnakeHead : MonoBehaviour
             //cambiar instanciate por activar y pool
             OnComida(1);
             //Debug.Log("Alargar");
-            Colas.Add(Instantiate(prefabCola, Colas[Colas.Count - 1].position, quaternionTdentity, colas_root).transform);
+            Colas.Add(Instantiate(prefabCola, Colas[^1].position, quaternionIdentity, colas_root).transform);
         }
         else if (collision.CompareTag(_Serpiente))
         {
