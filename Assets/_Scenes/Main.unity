@@ -431,17 +431,39 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-Cuando se come un punto, ahi mismo aparece el otro (confirmar que no
-    este encima de la serpiente)
+  m_Text: '-guardar la ultima y actual input, para activarlas en el siguiente Tick
+    como una combinacion de toques
 
+
+    -hacer un tick de espera si esta que se
+    choca o muere
+
+
+    -intentar ver si no revisar colisiones con Physics sino con
+    raycast o solo ver el que esta al frente
+
+
+    -aveces aparecen bombas cerca
+    del punto
+
+
+    -si se demora mucho para el punto, este se mueve
+
+
+    -Cuando
+    se come un punto, ahi mismo aparece el otro (confirmar que no este encima de
+    la serpiente)
 
 
     -la comida da de a 8 puntos
 
 
+    -hay una camida especial
+    que tiene un tiempo y luego desaparece
 
-    -hay una
-    camida especial que tiene un tiempo y luego desaparece'
+
+    -algunos niveles deja atravezar
+    la pared y otros no'
 --- !u!222 &191116136
 CanvasRenderer:
   m_ObjectHideFlags: 0
