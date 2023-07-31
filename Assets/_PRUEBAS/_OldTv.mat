@@ -59,8 +59,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Exposure: 1
-    - _FlickerAmount: 0.39
-    - _FlickerSpeed: 0.031
+    - _FlickerAmount: 0.31
+    - _FlickerSpeed: 0.039
     - _Float_1: 320
     - _Float_2: 180
     - _Float_3: 1
